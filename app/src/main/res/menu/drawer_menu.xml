@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_notes"
+        android:title="Notes"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/archiveFragment"
+        android:icon="@drawable/ic_archive"
+        android:title="Archive"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/trashFragment"
+        android:icon="@drawable/ic_trash"
+        android:title="Trash bin"
+        app:showAsAction="withText" />
+
+</menu>

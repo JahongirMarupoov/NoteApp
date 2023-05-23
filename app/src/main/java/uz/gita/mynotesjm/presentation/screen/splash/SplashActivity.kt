@@ -1,0 +1,41 @@
+package uz.gita.mynotesjm.presentation.screen.splash
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+import uz.gita.mynotesjm.MainActivity
+import uz.gita.mynotesjm.databinding.ActivitySplashBinding
+import uz.gita.noteapp_bek.utils.typeWrite
+
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivitySplashBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        supportActionBar?.hide()
+
+        binding.apply {
+            txt.typeWrite(this@SplashActivity, "Start Note", 35L)
+        }
+
+        val time = 1500L
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+        }, time)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        finish()
+    }
+
+}

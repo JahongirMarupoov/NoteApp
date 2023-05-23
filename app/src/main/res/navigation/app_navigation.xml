@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.gita.noteapp_bek.presentation.screen.home.HomeFragment"
+        android:label="My Notes"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trashFragment"
+        android:name="uz.gita.noteapp_bek.presentation.screen.trash.TrashFragment"
+        android:label="Trash bin"
+        tools:layout="@layout/fragment_trash" />
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="uz.gita.noteapp_bek.presentation.screen.add.AddNoteFragment"
+        android:label="Add Note"
+        tools:layout="@layout/fragment_add_note">
+
+        <argument
+            android:name="noteData"
+            app:argType="uz.gita.noteapp_bek.data.model.NoteData"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/archiveFragment"
+        android:name="uz.gita.noteapp_bek.presentation.screen.archive.ArchiveFragment"
+        android:label="Archived Notes"
+        tools:layout="@layout/fragment_archive" />
+
+</navigation>
